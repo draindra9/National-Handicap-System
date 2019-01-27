@@ -1,0 +1,284 @@
+    /*CSS Document*/
+
+    /*SCROLLBAR FIX*/
+    body {
+    	padding-right:0px !important;
+    	margin-right:0px !important;
+	}
+
+	body.modal-open {
+    	overflow: auto;
+	}
+	/*END OF SCROLLBAR FIX*/
+
+	/*SIDEBAR*/
+    body,html {
+		height: 100%;
+	}
+	/*remove outer padding*/
+	.main .row {
+		padding: 0px;
+		margin: 0px;
+	}
+	/*remove rounded coners*/
+	nav.sidebar.navbar {
+		border-radius: 0px;
+	}
+
+	nav.sidebar, .main {
+		-webkit-transition: margin 200ms ease-out;
+	    -moz-transition: margin 200ms ease-out;
+	    -o-transition: margin 200ms ease-out;
+	    transition: margin 200ms ease-out;
+	}
+	/*add gap to nav and right windows*/
+	/*
+	.main {
+		padding: 10px 10px 0 10px;
+	}
+	*/
+	/*Small & Medium*/
+	@media (min-width: 768px) {
+		/*allow main to be next to nav*/
+		.main {
+			position: absolute;
+			width: calc(100% - 50px); /*keeps 100% minus nav size*/
+			margin-left: 50px;
+			float: right;
+		}
+		/*lets nav bar to be showed on mouseover*/
+		nav.sidebar:hover + .main {
+			margin-left: 210px;
+		}
+		/*center brand*/
+		nav.sidebar.navbar.sidebar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
+			margin-left: 0px;
+		}
+		/*center brand*/
+		nav.sidebar .navbar-brand, nav.sidebar .navbar-header {
+			text-align: center;
+			width: 100%;
+			margin-left: 0px;
+		}
+		/*center icons*/
+		nav.sidebar a {
+			padding-right: 13px;
+		}
+		nav.sidebar a {
+			font-family: akrobat, Arial;
+			font-size: 15px;
+		}
+		/*adds border top to first nav box*/
+		nav.sidebar .navbar-nav > li:first-child {
+			border-top: 1px #DADFE1 solid;
+		}
+		/*adds border to bottom nav boxes*/
+		nav.sidebar .navbar-nav > li {
+			border-bottom: 1px #DADFE1 solid;
+		}
+		/*colors/style dropdown box*/
+		nav.sidebar .navbar-nav .open .dropdown-menu {
+			position: static;
+			float: none;
+			width: auto;
+			margin-top: 0;
+			background-color: transparent;
+			border: 0;
+			-webkit-box-shadow: none;
+			box-shadow: none;
+		}
+
+		/*allows nav box to use 100% width*/
+		nav.sidebar .navbar-collapse, nav.sidebar .container-fluid {
+			padding: 0 0px 0 0px;
+		}
+		/*colors dropdown box text*/
+		.navbar-inverse .navbar-nav .open .dropdown-menu>li>a {
+			color: #ECF0F1;
+		}
+		/*gives sidebar width/height*/
+		nav.sidebar {
+			width: 210px;
+			height: 100%;
+			margin-left: -160px;
+			float: left;
+			z-index: 8000;
+			margin-bottom: 0px;
+		}
+		/*give sidebar 100% width*/
+		nav.sidebar li {
+			width: 100%;
+		}
+		/*move nav to full on mouse over*/
+		nav.sidebar:hover {
+			margin-left: 0px;
+		}
+		/*for hiden things when navbar hidden*/
+		.forAnimate{
+			opacity: 0;
+		}
+	}
+	/*Full*/
+	@media (min-width: 1330px) {
+		/*main after nav*/
+		.main {
+			width: calc(100% - 210px); /*keeps 100% minus nav size*/
+			margin-left: 210px;
+		}
+		/*show all nav*/
+		nav.sidebar {
+			margin-left: 0px;
+			float: left;
+		}
+		/*show hidden items on nav*/
+		nav.sidebar .forAnimate {
+			opacity: 1;
+		}
+	}
+
+	nav.sidebar .navbar-nav .open .dropdown-menu>li>a:hover, nav.sidebar .navbar-nav .open .dropdown-menu>li>a:focus {
+		color: #DADFE1;
+		background-color: transparent;
+	}
+
+	nav:hover .forAnimate {
+		opacity: 1;
+	}
+
+	section {
+		padding-left: 15px;
+	}
+
+	.dropdown-submenu {
+	    position: relative;
+	}
+	/*END OF SIDEBAR*/
+
+	/*MULTILEVEL DROPDOWN*/
+	.dropdown-submenu>.dropdown-menu {
+	    top: 0;
+	    left: 100%;
+	    margin-top: -6px;
+	    margin-left: 25px;
+	    -webkit-border-radius: 0 6px 6px 6px;
+	    -moz-border-radius: 0 6px 6px;
+	    border-radius: 0 6px 6px 6px;
+	}
+
+	.dropdown-submenu:hover>.dropdown-menu {
+	    display: block;
+	}
+
+	.dropdown-submenu:hover>a:after {
+	    border-left-color: #fff;
+	}
+
+	.dropdown-submenu.pull-left {
+	    float: none;
+	}
+
+	.dropdown-submenu.pull-left>.dropdown-menu {
+	    left: -100%;
+	    margin-left: 10px;
+	    -webkit-border-radius: 6px 0 6px 6px;
+	    -moz-border-radius: 6px 0 6px 6px;
+	    border-radius: 6px 0 6px 6px;
+	}
+	/*END OF MULTILEVEL DROPDOWN*/
+
+	/*FONT*/
+	@font-face {
+	    font-family: akrobat;
+	    src: local(fonts/Akrobat-Regular.otf);
+	}
+	/*END OF FONT*/
+	
+	/*CENTER MODAL*/
+	.modal {
+	    text-align: center;
+	    padding: 0 !important;
+	}
+
+	.modal:before {
+	    content: '';
+	    display: inline-block;
+	    height: 100%;
+	    vertical-align: middle;
+	    margin-right: -4px;
+	}
+
+	.modal-dialog {
+	    display: inline-block;
+	    text-align: left;
+	    vertical-align: middle;
+	}
+	/*END OF CENTER MODAL*/
+	
+	/*START OF EXTRA SMALL INPUT*/
+	.input-xs {
+	    height: 22px;
+	    padding: 2px 5px;
+	    font-size: 12px;
+	    line-height: 1.5;
+	    border-radius: 3px;
+	}
+	/*END OF EXTRA SMALL INPUT*/
+	
+	/*START OF CENTER PLACEHOLDER*/
+	input[placeholder="Black"],
+	input[placeholder="Blue"],
+	input[placeholder="White"],
+	input[placeholder="White Lady"],
+	input[placeholder="Red"]
+	{
+		text-align:center;
+	}
+	/*END OF CENTER PLACEHOLDER*/
+	
+	/*START OF FORM CUSTOM*/
+	.form-custom {
+	    background: #1E824C;
+	    padding: 10px;
+	    color: #fff;
+	    border-bottom: 1px solid #186d3f;
+	}
+	/*END OF FORM CUSTOM*/
+	
+	/*START OF CANVAS CUSTOM*/
+	.canvas-custom {
+		background: #ECF0F1;
+		padding: 20px;
+		margin-bottom: 50px;
+		border-top: 4px solid #16a085;
+		border-bottom: 4px solid #16a085;
+	}
+	/*END OF CANVAS CUSTOM*/
+	
+	/*START OF TABLE CUSTOM*/
+	.table-custom > thead > tr > th {
+		background: #fff;
+		padding: 10px;
+		color: #000;
+	}
+
+	.table-custom > tbody > tr > td {
+		color: #000;
+	}
+	/*END OF TABLE CUSTOM */
+	
+	/*START OF DISABLE INPUT NUMBER SPINNER*/
+	.no-spinners {
+  		-moz-appearance:textfield;
+	}
+
+	.no-spinners::-webkit-outer-spin-button,
+	.no-spinners::-webkit-inner-spin-button {
+	  -webkit-appearance: none;
+	  margin: 0;
+	}
+	/*END OF DISABLE INPUT NUMBER SPINNER*/
+
+	.breadcrumb>li>a
+	{
+		color:#fff;
+	}
